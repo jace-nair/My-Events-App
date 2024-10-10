@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import NavItems from "./NavItems";
+import MobileNav from "./MobileNav";
 
 export default function Header() {
     return(
@@ -13,14 +14,14 @@ export default function Header() {
                 </Link>
 
                 <SignedIn>
-                    <nav>
+                    <nav className="md:flex-between w-full max-w-xs hidden border-2 border-red-900">
                         <NavItems />
                     </nav>
                 </SignedIn>
                 <div className="flex w-32 justify-end gap-3">
                     <SignedIn>
                         <UserButton />
-                        <NavItems />
+                        <MobileNav />
                     </SignedIn>
                     <SignedOut>
                         <Button asChild className="rounded-full" size="lg">
